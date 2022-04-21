@@ -91,14 +91,19 @@ namespace Pratica4.Service
             {
                 throw new NullReferenceException("Não existe objetos do tipo pessoa referenciados!");
             }
-            foreach(Pessoa pessoa in listaComPessoa)
+            foreach (Pessoa pessoa in listaComPessoa)
             {
                 if (pessoa.ToString().ToUpper().IndexOf(busca.ToUpper()) != -1)
                 {
                     resultadoDaBusca += pessoa.ToString() + "\n";
                 }
             }
-            return resultadoDaBusca != "" ? resultadoDaBusca : "Não encontrado!";
+
+            //var resultadoDaBusca = from pessoa in listaComPessoa
+            //                       where (pessoa.ToString().ToUpper().Contains(busca.ToUpper()))
+            //                       select pessoa.ToString();
+
+            return resultadoDaBusca;//.Any()  ? resultadoDaBusca : "Não encontrado!";
         }
 
     }
