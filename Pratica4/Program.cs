@@ -4,7 +4,7 @@ namespace Pratica4
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Mai2n(string[] args)
         {
             Object[] i= new object[2];
             Console.WriteLine(i[0]);
@@ -21,6 +21,10 @@ namespace Pratica4
                 Console.WriteLine(e.Message);
             }
             catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (NullReferenceException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -64,7 +68,11 @@ namespace Pratica4
         {
             Console.Write("Informe o conteúdo a ser buscado: ");
             string conteudo = Console.ReadLine();
+           
             Console.WriteLine(ps.RealizaBusca(conteudo));
+            var ok = ps.RealizaBusca(conteudo);
+            
+            //dados.ForEach(p => dados.ToString());
         }
 
         private static void Remover(PessoaService ps, string cpf)
